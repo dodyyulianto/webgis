@@ -1,5 +1,2 @@
-# webgis-php
-
-WEBGIS Sederhana menggunakan Bahasa Pemrograman PHP
-
-Channel Youtube : https://youtube.com/c/NasrullahSiddik
+## Templates 
+https://github.com/ColorlibHQ/AdminLTE/releases/tag/v2.4.17
