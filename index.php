@@ -25,7 +25,26 @@
 <?php
   include '_layouts/header.php';
   include '_layouts/sidebar.php';
+?>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <?=$judul?>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><?=$judul?></li>
+      </ol>
+    </section>
+<?php
   echo $halaman;
+?>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<?php
   include '_layouts/footer.php';
   include '_layouts/javascript.php';
 ?>
