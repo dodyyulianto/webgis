@@ -31,7 +31,11 @@
           <a href="<?=url('beranda')?>">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
-         
+        </li>
+        <li>
+          <a href="<?=url('kecamatan')?>">
+            <i class="fa fa-map-marker"></i> <span>Kecamatan</span>
+          </a>
         </li>
         <li class="treeview">
           <a href="#">
