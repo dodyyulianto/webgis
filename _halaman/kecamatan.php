@@ -2,6 +2,43 @@
   $title="Kecamatan";
   $judul=$title;
   $url='kecamatan';
+if(isset($_POST['simpan'])){
+	if($_POST['id_kecamatan']==""){
+		$data['kd_kecamatan']=$_POST['kd_kecamatan'];
+		$data['nm_kecamatan']=$_POST['nm_kecamatan'];
+		$db->insert("m_kecamatan",$data);
+		?>
+		<script type="text/javascript">
+			window.alert('sukses disimpan');
+			window.location.href="<?=url('kecamatan')?>";
+		</script>
+		<?php
+	}
+	else{
+		$data['kd_kecamatan']=$_POST['kd_kecamatan'];
+		$data['nm_kecamatan']=$_POST['nm_kecamatan'];
+		$db->where('id_kecamatan',$_POST['id_kecamatan']);
+		$db->update("m_kecamatan",$data);
+		?>
+		<script type="text/javascript">
+			window.alert('sukses diubah');
+			window.location.href="<?=url('kecamatan')?>";
+		</script>
+		<?php
+	}
+}
+
+if(isset($_GET['hapus'])){
+	$db->where("id_kecamatan",$_GET['id']);
+	$db->delete("m_kecamatan");
+	?>
+	<script type="text/javascript">
+		window.alert('sukses dihapus');
+		window.location.href="<?=url('kecamatan')?>";
+	</script>
+	<?php
+}
+
 if(isset($_GET['tambah']) OR isset($_GET['ubah'])){
   $id_kecamatan="";
   $kd_kecamatan="";
