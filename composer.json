@@ -1,7 +1,8 @@
 {
     "name": "nshid/webgis-php",
     "require": {
-        "joshcam/mysqli-database-class": "*"
+        "joshcam/mysqli-database-class": "*",
+        "josantonius/session": "^1.1"
     },
     "license": "tidak ada",
     "authors": [

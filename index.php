@@ -1,5 +1,6 @@
 <?php 
  include '_loader.php';
+ $setTemplate=true;
  if(isset($_GET['halaman'])){
     $halaman=$_GET['halaman'];
   }
@@ -14,8 +15,13 @@
   else{
     include $file;
   }
-  $halaman = ob_get_contents();
+  $content = ob_get_contents();
   ob_end_clean();
+  
+  if($setTemplate==true){
+    if($session->get("logged")!==true){
+      redirect(url('login'));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +45,7 @@
       </ol>
     </section>
 <?php
-  echo $halaman;
+  echo $content;
 ?>
   <!-- /.content -->
 </div>
@@ -51,3 +57,7 @@
 </div>
 </body>
 </html>
+<?php } else {
+  echo $content;
+}
+?>

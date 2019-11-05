@@ -13,6 +13,11 @@ function url($a='',$b=''){
     return base_url($b.'?halaman='.$a);
 }
 
+function redirect($a=''){
+  header("location: ".$a);
+  exit;
+}
+
 function templates($a=''){
     return assets($GLOBALS['template'].$a);
 }

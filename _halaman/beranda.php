@@ -3,5 +3,5 @@
   $judul=$title;
 ?>
 <?=content_open('Halaman Beranda')?>
-        Selamat datang diberanda
+    <?=$session->pull("info")?>
 <?=content_close()?>
