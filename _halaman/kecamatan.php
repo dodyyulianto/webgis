@@ -6,6 +6,14 @@ if(isset($_POST['simpan'])){
 	$file=upload('geojson_kecamatan','geojson');
 	if($file!=false){
 		$data['geojson_kecamatan']=$file;
+		if($_POST['id_kecamatan']!=''){
+			// hapus file di dalam folder
+			$db->where('id_kecamatan',$_GET['id']);
+			$get=$db->ObjectBuilder()->getOne('m_kecamatan');
+			$geojson_kecamatan=$get->geojson_kecamatan;
+			unlink('assets/unggah/geojson/'.$geojson_kecamatan);
+			// end hapus file di dalam folder
+		}
 	}
 	if($_POST['id_kecamatan']==""){
 		$data['kd_kecamatan']=$_POST['kd_kecamatan'];
@@ -39,6 +47,13 @@ if(isset($_POST['simpan'])){
 }
 
 if(isset($_GET['hapus'])){
+	$setTemplate=false;
+	// hapus file di dalam folder
+	$db->where('id_kecamatan',$_GET['id']);
+	$get=$db->ObjectBuilder()->getOne('m_kecamatan');
+	$geojson_kecamatan=$get->geojson_kecamatan;
+	unlink('assets/unggah/geojson/'.$geojson_kecamatan);
+	// end hapus file di dalam folder
 	$db->where("id_kecamatan",$_GET['id']);
 	$exec=$db->delete("m_kecamatan");
 	$info='<div class="alert alert-success alert-dismissible">
@@ -56,7 +71,7 @@ if(isset($_GET['hapus'])){
 	redirect(url($url));
 }
 
-if(isset($_GET['tambah']) OR isset($_GET['ubah'])){
+elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
   $id_kecamatan="";
   $kd_kecamatan="";
   $nm_kecamatan="";
