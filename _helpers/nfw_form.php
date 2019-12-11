@@ -71,6 +71,16 @@ function input_number($a, $b, $c = '', $d = '')
     }
     return '<input type="number" name="' . $a . '" value="' . $b . '" class="form-control' . $c . '"' . $d . '>' . "\n";
 }
+function input_color($a, $b, $c = '', $d = '')
+{
+    if ($c != '') {
+        $c = ' ' . $c;
+    }
+    if ($d != '') {
+        $d = ' ' . $d;
+    }
+    return '<input type="color" name="' . $a . '" value="' . $b . '" class="form-control' . $c . '"' . $d . '>' . "\n";
+}
 function textarea($a, $b, $c = '', $d = '')
 {
     if(!is_array($c)){

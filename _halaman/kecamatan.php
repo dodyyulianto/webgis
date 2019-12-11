@@ -18,6 +18,7 @@ if(isset($_POST['simpan'])){
 	if($_POST['id_kecamatan']==""){
 		$data['kd_kecamatan']=$_POST['kd_kecamatan'];
 		$data['nm_kecamatan']=$_POST['nm_kecamatan'];
+		$data['warna_kecamatan']=$_POST['warna_kecamatan'];
 		$exec=$db->insert("m_kecamatan",$data);
 		$info='<div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -76,6 +77,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
   $kd_kecamatan="";
   $nm_kecamatan="";
   $geojson_kecamatan="";
+  $warna_kecamatan="";
   if(isset($_GET['ubah']) AND isset($_GET['id'])){
   	$id=$_GET['id'];
   	$db->where('id_kecamatan',$id);
@@ -85,6 +87,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
 		$kd_kecamatan=$row->kd_kecamatan;
 		$nm_kecamatan=$row->nm_kecamatan;
 		$geojson_kecamatan=$row->geojson_kecamatan;
+		$warna_kecamatan=$row->warna_kecamatan;
 	}
   }
 ?>
@@ -93,15 +96,35 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
     	<?=input_hidden('id_kecamatan',$id_kecamatan)?>
     	<div class="form-group">
     		<label>Kode Kecamatan</label>
-    		<?=input_text('kd_kecamatan',$kd_kecamatan)?>
+    		<div class="row">
+	    		<div class="col-md-4">
+	    			<?=input_text('kd_kecamatan',$kd_kecamatan)?>
+		    	</div>
+	    	</div>
     	</div>
     	<div class="form-group">
     		<label>Nama Kecamatan</label>
-    		<?=input_text('nm_kecamatan',$nm_kecamatan)?>
+    		<div class="row">
+	    		<div class="col-md-6">
+	    			<?=input_text('nm_kecamatan',$nm_kecamatan)?>
+	    		</div>
+    		</div>
     	</div>
     	<div class="form-group">
     		<label>GeoJSON</label>
-    		<?=input_file('geojson_kecamatan',$geojson_kecamatan)?>
+    		<div class="row">
+	    		<div class="col-md-4">
+    				<?=input_file('geojson_kecamatan',$geojson_kecamatan)?>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label>Warna</label> 
+    		<div class="row">
+	    		<div class="col-md-3">
+	    			<?=input_color('warna_kecamatan',$warna_kecamatan)?>
+	    		</div>
+    		</div>
     	</div>
     	<div class="form-group">
     		<button type="submit" name="simpan" class="btn btn-info"><i class="fa fa-save"></i> Simpan</button>
@@ -124,6 +147,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
 			<th>Kode</th>
 			<th>Nama Kecamatan</th>
 			<th>GeoJSON</th>
+			<th>Warna</th>
 			<th>Aksi</th>
 		</tr>
 	</thead>
@@ -138,6 +162,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
 						<td><?=$row->kd_kecamatan?></td>
 						<td><?=$row->nm_kecamatan?></td>
 						<td><a href="<?=assets('unggah/geojson/'.$row->geojson_kecamatan)?>" target="_BLANK"><?=$row->geojson_kecamatan?></a></td>
+						<td style="background: <?=$row->warna_kecamatan?>"></td>
 						<td>
 							<a href="<?=url($url.'&ubah&id='.$row->id_kecamatan)?>" class="btn btn-info"><i class="fa fa-edit"></i> Ubah</a>
 							<a href="<?=url($url.'&hapus&id='.$row->id_kecamatan)?>" class="btn btn-danger" onclick="return confirm('Hapus data?')"><i class="fa fa-trash"></i> Hapus</a>

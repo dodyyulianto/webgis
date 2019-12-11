@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2019 at 08:17 AM
+-- Generation Time: Dec 11, 2019 at 02:06 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -32,25 +32,26 @@ CREATE TABLE `m_kecamatan` (
   `id_kecamatan` int(11) NOT NULL,
   `kd_kecamatan` varchar(10) NOT NULL,
   `nm_kecamatan` varchar(30) NOT NULL,
-  `geojson_kecamatan` varchar(30) NOT NULL
+  `geojson_kecamatan` varchar(30) NOT NULL,
+  `warna_kecamatan` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `m_kecamatan`
 --
 
-INSERT INTO `m_kecamatan` (`id_kecamatan`, `kd_kecamatan`, `nm_kecamatan`, `geojson_kecamatan`) VALUES
-(6, '63.01.08', 'Tambang Ulang', '28061219081242.geojson'),
-(8, '63.01.01', 'Takisung', '25061219081252.geojson'),
-(16, '63.01.05', 'Bati-Bati', '71061219081303.geojson'),
-(17, '63.01.02', 'Jorong', '34061219081408.geojson'),
-(18, '63.01.03', 'Pelaihari', '39061219081421.geojson'),
-(19, '63.01.04', 'Kurau', '30061219081442.geojson'),
-(20, '63.01.07', 'Kintap', '29061219081511.geojson'),
-(21, '63.01.09', 'Batu Ampar', '44061219081535.geojson'),
-(22, '63.01.10', 'Bajuin', '92061219081549.geojson'),
-(23, '63.01.11', 'Bumi Makmur', '58061219081604.geojson'),
-(24, '63.01.06', 'Panyipatan', '100061219081653.geojson');
+INSERT INTO `m_kecamatan` (`id_kecamatan`, `kd_kecamatan`, `nm_kecamatan`, `geojson_kecamatan`, `warna_kecamatan`) VALUES
+(6, '63.01.08', 'Tambang Ulang', '28061219081242.geojson', '#009900'),
+(8, '63.01.01', 'Takisung', '25061219081252.geojson', '#007700'),
+(16, '63.01.05', 'Bati-Bati', '71061219081303.geojson', '#880000'),
+(17, '63.01.02', 'Jorong', '34061219081408.geojson', '#000099'),
+(18, '63.01.03', 'Pelaihari', '39061219081421.geojson', '#DD9900'),
+(19, '63.01.04', 'Kurau', '30061219081442.geojson', '#009999'),
+(20, '63.01.07', 'Kintap', '29061219081511.geojson', '#ff0099'),
+(21, '63.01.09', 'Batu Ampar', '44061219081535.geojson', '#990099'),
+(22, '63.01.10', 'Bajuin', '92061219081549.geojson', '#662222'),
+(23, '63.01.11', 'Bumi Makmur', '58061219081604.geojson', '#888'),
+(24, '63.01.06', 'Panyipatan', '100061219081653.geojson', '#222');
 
 -- --------------------------------------------------------
 
