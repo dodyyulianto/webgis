@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 02:06 PM
+-- Generation Time: Dec 20, 2019 at 03:43 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -72,6 +72,32 @@ CREATE TABLE `pengguna` (
 INSERT INTO `pengguna` (`id_pengguna`, `nm_pengguna`, `kt_sandi`) VALUES
 (1, 'admin', '123456');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_hotspot`
+--
+
+CREATE TABLE `t_hotspot` (
+  `id_hotspot` int(11) NOT NULL,
+  `id_kecamatan` int(11) NOT NULL,
+  `lokasi` varchar(50) NOT NULL,
+  `keterangan` varchar(100) NOT NULL,
+  `lat` float(9,6) NOT NULL,
+  `lng` float(9,6) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_hotspot`
+--
+
+INSERT INTO `t_hotspot` (`id_hotspot`, `id_kecamatan`, `lokasi`, `keterangan`, `lat`, `lng`, `tanggal`) VALUES
+(1, 18, 'Jl. Peganggas gas amat', 'Kebakaran Parah sekali', -3.641010, 114.775002, '2019-12-19'),
+(2, 6, 'Jl. Pegangga', 'Kebakaran Parah sekali', -3.656000, 114.775002, '2019-12-19'),
+(3, 18, 'Jl. Raya', 'Rusak parah', -3.816298, 114.797401, '2019-12-20'),
+(4, 18, 'Jl A', 'Rusak parah', -3.817160, 114.800987, '2019-12-20');
+
 --
 -- Indexes for dumped tables
 --
@@ -89,6 +115,12 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
+-- Indexes for table `t_hotspot`
+--
+ALTER TABLE `t_hotspot`
+  ADD PRIMARY KEY (`id_hotspot`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -96,13 +128,19 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `m_kecamatan`
 --
 ALTER TABLE `m_kecamatan`
-  MODIFY `id_kecamatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_kecamatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `t_hotspot`
+--
+ALTER TABLE `t_hotspot`
+  MODIFY `id_hotspot` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

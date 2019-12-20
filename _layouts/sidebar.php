@@ -45,6 +45,20 @@
             <li><a href="<?=url('kecamatan')?>"><i class="fa fa-circle-o"></i> Kecamatan</a></li>
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-sitemap"></i>
+            <span>Transaksi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?=url('hotspot')?>"><i class="fa fa-circle-o"></i> Hotspot</a></li>
+          </ul>
+        </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-map"></i>
@@ -55,6 +69,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?=url('leaflet-standar')?>"><i class="fa fa-circle-o"></i> Standar</a></li>
+            <li><a href="<?=url('leaflet-point')?>"><i class="fa fa-circle-o"></i> Point</a></li>
           </ul>
         </li>
         <li>
