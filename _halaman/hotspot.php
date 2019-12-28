@@ -3,6 +3,18 @@
   $judul=$title;
   $url='hotspot';
 if(isset($_POST['simpan'])){
+	$file=upload('marker','marker');
+	if($file!=false){
+		$data['marker']=$file;
+		if($_POST['id_hotspot']!=''){
+			// hapus file di dalam folder
+			$db->where('id_hotspot',$_GET['id']);
+			$get=$db->ObjectBuilder()->getOne('t_hotspot');
+			$marker=$get->marker;
+			unlink('assets/unggah/marker/'.$marker);
+			// end hapus file di dalam folder
+		}
+	}
 	$data['id_kecamatan']=$_POST['id_kecamatan'];
 	$data['keterangan']=$_POST['keterangan'];
 	$data['lokasi']=$_POST['lokasi'];
@@ -65,8 +77,8 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
   $tanggal=date('Y-m-d');
   if(isset($_GET['ubah']) AND isset($_GET['id'])){
   	$id=$_GET['id'];
-  	$db->where('id_kecamatan',$id);
-	$row=$db->ObjectBuilder()->getOne('m_kecamatan');
+  	$db->where('id_hotspot',$id);
+	$row=$db->ObjectBuilder()->getOne('t_hotspot');
 	if($db->count>0){
 		$id_hotspot=$row->id_hotspot;
 		$id_kecamatan=$row->id_kecamatan;
@@ -79,7 +91,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
   }
 ?>
 <?=content_open('Form Hotspot')?>
-   <form method="post">
+   <form method="post" enctype="multipart/form-data">
     	<?=input_hidden('id_hotspot',$id_hotspot)?>
     	<div class="form-group">
     		<label>Lokasi</label>
@@ -131,6 +143,14 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
     		</div>
     	</div>
     	<div class="form-group">
+    		<label>Marker</label>
+    		<div class="row">
+	    		<div class="col-md-4">
+    				<?=input_file('marker','')?>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="form-group">
     		<button type="submit" name="simpan" class="btn btn-info"><i class="fa fa-save"></i> Simpan</button>
 			<a href="<?=url($url)?>" class="btn btn-danger" ><i class="fa fa-reply"></i> Kembali</a>
     	</div>
@@ -154,6 +174,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
 			<th>Lat</th>
 			<th>Lng</th>
 			<th>Tanggal</th>
+			<th>Marker</th>
 			<th>Aksi</th>
 		</tr>
 	</thead>
@@ -172,6 +193,7 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
 						<td><?=$row->lat?></td>
 						<td><?=$row->lng?></td>
 						<td><?=$row->tanggal?></td>
+						<td class="text-center"><?=($row->marker==''?'-':'<img src="'.assets('unggah/marker/'.$row->marker).'" width="40px">')?></td>
 						<td>
 							<a href="<?=url($url.'&ubah&id='.$row->id_hotspot)?>" class="btn btn-info"><i class="fa fa-edit"></i> Ubah</a>
 							<a href="<?=url($url.'&hapus&id='.$row->id_hotspot)?>" class="btn btn-danger" onclick="return confirm('Hapus data?')"><i class="fa fa-trash"></i> Hapus</a>

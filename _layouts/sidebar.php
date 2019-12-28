@@ -70,6 +70,7 @@
           <ul class="treeview-menu">
             <li><a href="<?=url('leaflet-standar')?>"><i class="fa fa-circle-o"></i> Standar</a></li>
             <li><a href="<?=url('leaflet-point')?>"><i class="fa fa-circle-o"></i> Point</a></li>
+            <li><a href="<?=url('leaflet-pointmarker')?>"><i class="fa fa-circle-o"></i> Point Marker</a></li>
           </ul>
         </li>
         <li>
