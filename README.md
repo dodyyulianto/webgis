@@ -23,11 +23,11 @@ Aplikasi GIS berbasis web standar yang dapat dikembangkan menjadi aplikasi yang 
 2. [Tutorial LeafletJS - Kostumisasi Icon Marker (Point) sesuai Database](https://youtu.be/I6lFBH3J_Ts)
 
 # Donasi
-Untuk Berdonasi silahkan transfer melalui 
-__BANK BRI
-No. Rekening 023901023305509
-An. Nasrullah Sidik__ 
-Berapapun Donasi Anda aku ucapkan Terima kasih banyak :)
+Jika dirasa Tutorial dan Coding yang aku share bermanfaat, tidak salahnya bagi kalian jika ingin berdonasi. untuk donasi kalian bisa melalui : 
+__BANK BRI__.
+__No. Rekening 023901023305509__.
+__An. Nasrullah Sidik__. 
+Berapapun Donasi Anda, Saya ucapkan Terima kasih banyak :)
 
 Copyright © 2019 [Nasrullah Siddik](bit.ly/YTNSiddik). All rights reserved.
 
