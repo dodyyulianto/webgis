@@ -26,7 +26,8 @@ Aplikasi GIS berbasis web standar yang dapat dikembangkan menjadi aplikasi yang 
 Jika dirasa Tutorial dan Coding yang aku share bermanfaat, tidak salahnya bagi kalian jika ingin berdonasi. untuk donasi kalian bisa melalui : 
 __BANK BRI__\
 __No. Rekening 023901023305509__\
-__An. Nasrullah Sidik__\ 
+__An. Nasrullah Sidik__\
+ 
 Berapapun Donasi Anda, Saya ucapkan Terima kasih banyak :)
 
 Copyright © 2019 [Nasrullah Siddik](bit.ly/YTNSiddik). All rights reserved.
