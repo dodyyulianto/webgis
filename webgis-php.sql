@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2019 at 02:14 PM
+-- Generation Time: Feb 11, 2020 at 01:36 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -97,7 +97,16 @@ INSERT INTO `t_hotspot` (`id_hotspot`, `id_kecamatan`, `lokasi`, `keterangan`, `
 (1, 18, 'Jl. Peganggas gas amat', 'Kebakaran Parah sekali', -3.641010, 114.775002, '2019-12-19', '35281219011541.png'),
 (2, 6, 'Jl. Pegangga', 'Kebakaran Parah sekali', -3.656000, 114.775002, '2019-12-19', ''),
 (3, 18, 'Jl. Raya', 'Rusak parah', -3.816298, 114.797401, '2019-12-20', '7281219011755.png'),
-(4, 18, 'Jl A', 'Rusak parah', -3.817160, 114.800987, '2019-12-20', '');
+(4, 18, 'Jl A', 'Rusak parah', -3.817160, 114.800987, '2019-12-20', ''),
+(5, 19, 'Jl. Sepeda', '-', -3.641010, 114.675003, '2020-01-20', ''),
+(6, 6, 'Rumah Saiful', '-', -3.661010, 114.775002, '2020-01-20', ''),
+(7, 21, 'Rmah Jakaria', '-', -3.846298, 114.897400, '2020-01-20', ''),
+(8, 22, 'HUtan Rawa Merawa', '-', -3.761010, 114.857399, '2020-01-20', '91200120113957.png'),
+(9, 18, 'Gang Jambu', 'Rumah Terbakar', -3.817130, 114.801888, '2020-02-11', ''),
+(10, 6, 'Rumah Zakaria', 'Kompor Meledak', -3.657300, 114.766006, '2020-02-11', ''),
+(11, 6, 'Gedung Pencakar', 'Lantai 4 terbakar', -3.655300, 114.696503, '2020-02-11', ''),
+(12, 6, 'Pasar Kaki Lima', '4 Loket terbakar', -3.655300, 114.686501, '2020-02-11', ''),
+(13, 6, 'Pasar 5', 'Terbakar habis', -3.685300, 114.776009, '2020-02-11', '');
 
 --
 -- Indexes for dumped tables
@@ -141,7 +150,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `t_hotspot`
 --
 ALTER TABLE `t_hotspot`
-  MODIFY `id_hotspot` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_hotspot` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

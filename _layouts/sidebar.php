@@ -72,6 +72,7 @@
             <li><a href="<?=url('leaflet-point')?>"><i class="fa fa-circle-o"></i> Point</a></li>
             <li><a href="<?=url('leaflet-pointmarker')?>"><i class="fa fa-circle-o"></i> Point Marker</a></li>
             <li><a href="<?=url('leaflet-pointgeojson')?>"><i class="fa fa-circle-o"></i> Point Marker GeoJSON</a></li>
+            <li><a href="<?=url('leaflet-cluster')?>"><i class="fa fa-circle-o"></i> Cluster</a></li>
           </ul>
         </li>
         <li>
