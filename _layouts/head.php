@@ -7,6 +7,8 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?=templates()?>bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.20/datatables.min.css"/>
+
   <link rel="stylesheet" href="<?=templates()?>bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?=templates()?>bower_components/Ionicons/css/ionicons.min.css">
