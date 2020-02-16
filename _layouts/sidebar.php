@@ -74,6 +74,7 @@
             <li><a href="<?=url('leaflet-pointgeojson')?>"><i class="fa fa-circle-o"></i> Point Marker GeoJSON</a></li>
             <li><a href="<?=url('leaflet-cluster')?>"><i class="fa fa-circle-o"></i> Cluster</a></li>
             <li><a href="<?=url('leaflet-clustercorona')?>"><i class="fa fa-circle-o"></i> Cluster Corona</a></li>
+            <li><a href="<?=url('leaflet-heatmap')?>"><i class="fa fa-circle-o"></i> Heatmap</a></li>
           </ul>
         </li>
         <li>
