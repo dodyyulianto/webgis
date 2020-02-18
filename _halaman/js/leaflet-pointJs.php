@@ -111,6 +111,13 @@
 	    iconSize: [38, 45],
 	});
 	<?php
+	if($keterangan!=''){
+		$db->where('keterangan','%'.$keterangan.'%','LIKE');
+	}
+	if($tahun!='semua'){
+		$db->where('DATE_FORMAT(tanggal,"%Y")',$tahun);
+	}
+
 	$db->join('m_kecamatan b','a.id_kecamatan=b.id_kecamatan','LEFT');
 	$getdata=$db->ObjectBuilder()->get('t_hotspot a');
 	foreach ($getdata as $row) {
