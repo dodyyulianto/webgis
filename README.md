@@ -27,6 +27,8 @@ Jika dirasa Tutorial dan Coding yang aku share bermanfaat, tidak salahnya bagi k
 __BANK BRI__\
 __No. Rekening 023901023305509__\
 __An. Nasrullah Sidik__
+atau 
+https://trakteer.id/as.shiddiq
 
 Berapapun Donasi Anda, Saya ucapkan Terima kasih banyak :)
 
