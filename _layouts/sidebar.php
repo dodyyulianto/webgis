@@ -76,6 +76,7 @@
             <li><a href="<?=url('leaflet-clustercorona')?>"><i class="fa fa-circle-o"></i> Cluster Corona</a></li>
             <li><a href="<?=url('leaflet-heatmap')?>"><i class="fa fa-circle-o"></i> Heatmap</a></li>
             <li><a href="<?=url('leaflet-choroplet')?>"><i class="fa fa-circle-o"></i> Choroplet</a></li>
+            <li><a href="<?=url('leaflet-routingmachine')?>"><i class="fa fa-circle-o"></i> Routing Machine</a></li>
           </ul>
         </li>
         <li>
