@@ -28,6 +28,7 @@ if(isset($_POST['simpan'])){
 	else{
 		$data['kd_kecamatan']=$_POST['kd_kecamatan'];
 		$data['nm_kecamatan']=$_POST['nm_kecamatan'];
+		$data['warna_kecamatan']=$_POST['warna_kecamatan'];
 		$db->where('id_kecamatan',$_POST['id_kecamatan']);
 		$exec=$db->update("m_kecamatan",$data);
 		$info='<div class="alert alert-success alert-dismissible">
