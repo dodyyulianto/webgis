@@ -50,7 +50,7 @@ if(isset($_POST['simpan'])){
 
 if(isset($_GET['hapus'])){
 	$setTemplate=false;
-	$db->where("id_lokasi",$_GET['id']);
+	$db->where("id_hotspot",$_GET['id']);
 	$exec=$db->delete("t_hotspot");
 	$info='<div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
