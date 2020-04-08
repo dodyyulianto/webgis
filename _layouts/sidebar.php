@@ -9,7 +9,7 @@
           <img src="<?=templates()?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?=$session->get("nm_pengguna")?></p>
+          <p><?=$session->get("nm_pengguna")?> [<?=$session->get("level")?>]</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -32,7 +32,7 @@
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
-
+        <?php if ($session->get('level')=='Admin'): ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-folder"></i>
@@ -45,6 +45,7 @@
             <li><a href="<?=url('kecamatan')?>"><i class="fa fa-circle-o"></i> Kecamatan</a></li>
           </ul>
         </li>
+        <?php endif ?>
 
         <li class="treeview">
           <a href="#">

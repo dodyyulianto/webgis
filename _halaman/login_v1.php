@@ -4,28 +4,18 @@
     $nm_pengguna=$_POST['nm_pengguna'];
     $kt_sandi=$_POST['kt_sandi'];
     $db->where("nm_pengguna",$nm_pengguna);
+    $db->where("kt_sandi",$kt_sandi);
     $data=$db->ObjectBuilder()->getOne("pengguna");
     if($db->count>0){
-      // jika username ada
-      $hash = $data->kt_sandi;
-      if (password_verify($kt_sandi, $hash)) {
-          $session->set("logged",true);
-          $session->set("nm_pengguna",$data->nm_pengguna);
-          $session->set("id_pengguna",$data->id_pengguna);
-          $session->set("level",$data->level);
-          $session->set("info",'<div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Sukses!</h4> Selamat Datang <b>'.$data->nm_pengguna.'</b> di Halaman Utama Aplikasi
-                  </div>');
-          redirect(url("beranda"));
-      } else {
-         $session->set("logged",false);
-         $session->set("info",'<div class="alert alert-danger alert-dismissible">
+      $session->set("logged",true);
+      $session->set("nm_pengguna",$data->nm_pengguna);
+      $session->set("id_pengguna",$data->id_pengguna);
+
+      $session->set("info",'<div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-ban"></i> Error!</h4> Nama Pengguna atau Kata Sandi Salah
+                <h4><i class="icon fa fa-ban"></i> Sukses!</h4> Selamat Datang <b>'.$data->nm_pengguna.'</b> di Halaman Utama Aplikasi
               </div>');
-        redirect(url("login"));
-      }
+      redirect(url("beranda"));
     }
     else{
       $session->set("logged",false);
@@ -35,6 +25,7 @@
               </div>');
       redirect(url("login"));
     }
+
   }
 ?>
 <!DOCTYPE html>

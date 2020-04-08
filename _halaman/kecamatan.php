@@ -2,6 +2,10 @@
   $title="Kecamatan";
   $judul=$title;
   $url='kecamatan';
+  if ($session->get('level')!='Admin'){
+  	redirect(url('beranda'));
+  }
+
 if(isset($_POST['simpan'])){
 	$file=upload('geojson_kecamatan','geojson');
 	if($file!=false){
