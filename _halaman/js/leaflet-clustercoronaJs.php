@@ -39,15 +39,17 @@
 	var markers = L.markerClusterGroup();
 	for(i=0;i<coronaData.length;i++){
 		var data=coronaData[i].attributes;
-		var marker  = L.marker([data.Lat,data.Long_])
-				.bindPopup(
-						"Negara : "+data.Country_Region+"<br>"+
-						"Provinsi : "+data.Province_State+"<br>"+
-						"Terinfeksi : "+data.Confirmed+"<br>"+
-						"Meninggal : "+data.Deaths+"<br>"+
-						"Sembuh : "+data.Recovered+"<br>"
-					);
-		markers.addLayer(marker);
+		if(data.Lat!=null && data.Long_!=null){
+			var marker  = L.marker([data.Lat,data.Long_])
+					.bindPopup(
+							"Negara : "+data.Country_Region+"<br>"+
+							"Provinsi : "+data.Province_State+"<br>"+
+							"Terinfeksi : "+data.Confirmed+"<br>"+
+							"Meninggal : "+data.Deaths+"<br>"+
+							"Sembuh : "+data.Recovered+"<br>"
+						);
+			markers.addLayer(marker);
+		}
 	}
 	map.addLayer(markers);
 
