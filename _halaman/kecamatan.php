@@ -19,6 +19,36 @@ if(isset($_POST['simpan'])){
 			// end hapus file di dalam folder
 		}
 	}
+
+
+	// cek validasi
+	$validation=null;
+	// cek kode apakah sudah ada
+	if($_POST['id_kecamatan']!=""){
+		$db->where('id_kecamatan !='.$_POST['id_kecamatan']);
+	}
+	$db->where('kd_kecamatan',$_POST['kd_kecamatan']);
+	$db->get('m_kecamatan');
+	if($db->count>0){
+		$validation[]='Kode Kecamatan Sudah Ada';
+	}
+	//tidak boleh kosong
+	if($_POST['nm_kecamatan']==''){
+		$validation[]='Nama Kecamatan Tidak Boleh Kosong';
+	}
+
+
+	if(count($validation)>0){
+		$setTemplate=false;
+		$session->set('error_validation',$validation);
+		$session->set('error_value',$_POST);
+		redirect($_SERVER['HTTP_REFERER']);
+		return false;
+	}
+	// cek validasi
+
+
+
 	if($_POST['id_kecamatan']==""){
 		$data['kd_kecamatan']=$_POST['kd_kecamatan'];
 		$data['nm_kecamatan']=$_POST['nm_kecamatan'];
@@ -95,9 +125,21 @@ elseif(isset($_GET['tambah']) OR isset($_GET['ubah'])){
 		$warna_kecamatan=$row->warna_kecamatan;
 	}
   }
+  // value ketika validasi
+  if($session->get('error_value')){
+  	extract($session->pull('error_value'));
+  }
 ?>
 <?=content_open('Form Kecamatan')?>
     <form method="post" enctype="multipart/form-data">
+    	<?php
+    		// menampilkan error validasi
+  			if($session->get('error_validation')){
+  				foreach ($session->pull('error_validation') as $key => $value) {
+  					echo '<div class="alert alert-danger">'.$value.'</div>';
+  				}
+  			}
+    	?>
     	<?=input_hidden('id_kecamatan',$id_kecamatan)?>
     	<div class="form-group">
     		<label>Kode Kecamatan</label>
