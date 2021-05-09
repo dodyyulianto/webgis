@@ -37,8 +37,7 @@ if(isset($_POST['simpan'])){
 		$validation[]='Nama Kecamatan Tidak Boleh Kosong';
 	}
 
-
-	if(count($validation)>0){
+	if($validation!=null){
 		$setTemplate=false;
 		$session->set('error_validation',$validation);
 		$session->set('error_value',$_POST);
@@ -76,7 +75,7 @@ if(isset($_POST['simpan'])){
 	else{
       $session->set("info",'<div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-ban"></i> Error!</h4> Proses gagal dilakukan
+                <h4><i class="icon fa fa-ban"></i> Error!</h4> Proses gagal dilakukan <br>'.$db->getLastError().'
               </div>');
 	}
 	redirect(url($url));

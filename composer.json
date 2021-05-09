@@ -1,7 +1,7 @@
 {
     "name": "nshid/webgis-php",
     "require": {
-        "joshcam/mysqli-database-class": "*",
+        "joshcam/mysqli-database-class": "dev-master",
         "josantonius/session": "^1.1",
         "verot/class.upload.php": "dev-master"
     },

@@ -42,7 +42,7 @@ if(isset($_POST['simpan'])){
 	else{
       $session->set("info",'<div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-ban"></i> Error!</h4> Proses gagal dilakukan
+                <h4><i class="icon fa fa-ban"></i> Error!</h4> Proses gagal dilakukan <br>'.$db->getLastError().'
               </div>');
 	}
 	redirect(url($url));
