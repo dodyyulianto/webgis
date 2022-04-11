@@ -22,13 +22,9 @@ Aplikasi GIS berbasis web standar yang dapat dikembangkan menjadi aplikasi yang 
 1. [Tutorial LeafletJS - Menampilkan Marker (Point) dari Database](https://youtu.be/K3GJ4zeYnwo)
 2. [Tutorial LeafletJS - Kostumisasi Icon Marker (Point) sesuai Database](https://youtu.be/I6lFBH3J_Ts)
 
-# Donasi
-Jika dirasa Tutorial dan Coding yang aku share bermanfaat, tidak salahnya bagi kalian jika ingin berdonasi. untuk donasi kalian bisa melalui : 
-__BANK BRI__\
-__No. Rekening 023901023305509__\
-__An. Nasrullah Sidik__
-atau 
-https://trakteer.id/as.shiddiq
+# Donate
+Kalian bisa langsung donate ke https://trakteer.id/as.shiddiq
+atau langsung beri tips melalui https://trakteer.id/as.shiddiq/tip
 
 Berapapun Donasi Anda, Saya ucapkan Terima kasih banyak :)
 
